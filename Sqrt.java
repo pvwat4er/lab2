@@ -5,7 +5,7 @@ public class Sqrt extends Command {
 
     private Stack<Double> stack;
 
-    public void execute(Stack<Double> stack, Map<String, Double> define){
+    public void execute(Stack<Double> stack, Map<String, Double> define, String[] s){
 
         double x = stack.pop();
         double z;
