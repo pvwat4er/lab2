@@ -16,17 +16,18 @@ public class Main {
         String s;
         Stack<Double> stack = new Stack();
 
-      //  if (args.length > 0) {
-      //      scanner = new Scanner(new FileInputStream(args[0]));
-      //  } else {
-      //      scanner = new Scanner(System.in);
-      //  }
+        if (args.length > 0) {
+            scanner = new Scanner(new FileInputStream(args[0]));
+        } else {
+            scanner = new Scanner(System.in);
+        }
 
-        scanner = new Scanner(System.in);
+        //scanner = new Scanner(System.in);
 
         Map<String, Double> varMap = new HashMap<>();
 
-        CommandsFactory singleton = CommandsFactory.getInstance();
+       // CommandsFactory singleton = CommandsFactory.getInstance();
+
 
         while ( scanner.hasNextLine() ) {
 
@@ -34,6 +35,7 @@ public class Main {
 
             String[] str = s.split(" ");
 
+            CommandsFactory singleton = CommandsFactory.getInstance();
             Command kom = singleton.getCommandByName(str[0]);
 
             if (kom != null){
