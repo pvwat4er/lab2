@@ -1,20 +1,31 @@
+package com.jcourse.pvwat4er;
 
-
+import java.io.*;
 import java.util.Map;
 import java.util.Stack;
-import java.io.InputStreamReader;
 import java.util.Scanner;
 import java.util.HashMap;
+import java.io.FileNotFoundException;
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
         Scanner scanner;
         String s;
         Stack<Double> stack = new Stack();
 
+      //  if (args.length > 0) {
+      //      scanner = new Scanner(new FileInputStream(args[0]));
+      //  } else {
+      //      scanner = new Scanner(System.in);
+      //  }
+
         scanner = new Scanner(System.in);
 
-        Map<String, Double> varMap = new HashMap();
+        Map<String, Double> varMap = new HashMap<>();
+
+        CommandsFactory singleton = CommandsFactory.ourInstance();
 
         int x = 1;
         while (x < 100) {
