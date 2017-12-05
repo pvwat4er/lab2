@@ -8,6 +8,7 @@ import java.util.HashMap;
 import java.io.FileNotFoundException;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class Main {
     public static void main(String[] args) throws FileNotFoundException {
@@ -27,7 +28,6 @@ public class Main {
 
         CommandsFactory singleton = CommandsFactory.getInstance();
 
-        int x = 1;
         while ( scanner.hasNextLine() ) {
 
             s = scanner.nextLine();
