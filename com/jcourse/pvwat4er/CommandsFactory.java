@@ -9,7 +9,13 @@ import java.util.Properties;
 
 public class CommandsFactory{
     private final Map<String, Command> cmdMap = new HashMap<>();
-    private final static CommandsFactory ourInstance = new CommandsFactory();
+
+
+    // private final static CommandFactory inst = new CommandFactory();
+
+    private static CommandsFactory inst = null;
+    private Properties properties = null;
+
     private CommandsFactory(){
         Properties properties = new Properties();
 
@@ -34,7 +40,7 @@ public class CommandsFactory{
         return cmdMap.get(commandName);
     }
 
-    public static CommandsFactory getInstance(){
-        return ourInstance;
+    public static CommandsFactory getInst(){
+        return inst;
     }
 }

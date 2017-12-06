@@ -9,6 +9,7 @@ public class Push extends Command{
 
     public void execute(Stack<Double> stack, Map<String, Double> define, String[] s){
         stack.push((double) 1);
+        System.out.println(2);
 
     };
 }

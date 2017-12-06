@@ -10,8 +10,10 @@ import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.util.concurrent.atomic.AtomicInteger;
 
+import static java.lang.Class.*;
+
 public class Main {
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) throws FileNotFoundException, ClassNotFoundException {
         Scanner scanner;
         String s;
         Stack<Double> stack = new Stack();
@@ -22,11 +24,10 @@ public class Main {
             scanner = new Scanner(System.in);
         }
 
-        //scanner = new Scanner(System.in);
 
         Map<String, Double> varMap = new HashMap<>();
 
-       // CommandsFactory singleton = CommandsFactory.getInstance();
+        CommandsFactory singleton = CommandsFactory.getInst();
 
 
         while ( scanner.hasNextLine() ) {
@@ -35,7 +36,6 @@ public class Main {
 
             String[] str = s.split(" ");
 
-            CommandsFactory singleton = CommandsFactory.getInstance();
             Command kom = singleton.getCommandByName(str[0]);
 
             if (kom != null){
