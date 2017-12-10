@@ -36,7 +36,12 @@ public class Main {
 
             String[] str = s.split(" ");
 
-            Command kom = singleton.getCommandByName(str[0]);
+            String s0 = str[0];
+
+         //   CommFactory singleton = CommFactory.getInstance();
+
+            Command kom = singleton.getCommandByName(s0);
+
 
             if (kom != null){
                 try{

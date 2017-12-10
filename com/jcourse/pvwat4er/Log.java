@@ -3,7 +3,7 @@ package com.jcourse.pvwat4er;
 import java.util.Stack;
 import java.util.Map;
 
-public class Sqrt implements Command {
+public class Log implements Command{
 
     @In(type = RType.STACK)
     private Stack<Double> stack;
@@ -13,7 +13,7 @@ public class Sqrt implements Command {
         if (stack.size() < 1){
             System.out.println("Невозможно выполнить команду! Стек должен содержать не менее одного элемента!");
         } else {
-            stack.push(Math.sqrt(stack.pop()));
+            stack.push(Math.log(stack.pop()));
         }
 
     };

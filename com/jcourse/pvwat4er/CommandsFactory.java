@@ -11,17 +11,16 @@ public class CommandsFactory{
     private final Map<String, Command> cmdMap = new HashMap<>();
 
 
-    // private final static CommandFactory inst = new CommandFactory();
-
-    private static CommandsFactory inst = null;
-    private Properties properties = null;
+     private final static CommandsFactory inst = new CommandsFactory();
 
     private CommandsFactory(){
         Properties properties = new Properties();
 
-        try(InputStream in = CommandsFactory.class.getResourceAsStream("commands.properties")){
+        try(
+                InputStream in = CommandsFactory.class.getClassLoader().getResourceAsStream("commands.properties")) {
             properties.load(in);
-        }catch (IOException e){
+        }
+        catch (IOException e){
             System.out.println("Чтение файла commands.properties завершилось с ошибкой!");
         }
 
