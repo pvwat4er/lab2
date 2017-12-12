@@ -10,7 +10,6 @@ import java.util.Properties;
 public class CommandsFactory{
     private final Map<String, Command> cmdMap = new HashMap<>();
 
-
      private final static CommandsFactory inst = new CommandsFactory();
 
     private CommandsFactory(){
